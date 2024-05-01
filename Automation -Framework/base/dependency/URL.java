@@ -6,9 +6,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 public class URL {
-	RemoteWebDriver driver = new ChromeDriver();
+	protected RemoteWebDriver driver= null;
 	@BeforeMethod
 	public void Startup() {
+		driver = new ChromeDriver();
 		String URL ="https://katalon-demo-cura.herokuapp.com/profile.php#login";
 		driver.manage().window().maximize();
 		driver.get(URL);

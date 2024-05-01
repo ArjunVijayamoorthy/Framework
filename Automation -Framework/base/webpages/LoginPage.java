@@ -1,17 +1,21 @@
 package webpages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
+
+import dependency.URL;
 @Test 
-public class LoginPage {	
+public class LoginPage extends URL{	
+	 RemoteWebDriver driver;
 
-	RemoteWebDriver driver = new ChromeDriver();
-
+	public LoginPage(RemoteWebDriver driver) {
+		this.driver  = driver;
+	}
+	
 	public LoginPage Username(String username) {
-		driver.findElement(By.id("username")).sendKeys(username);
-		return this;
+		 driver.findElement(By.id("txt-username")).sendKeys(username);
+		 return this;
 	}
 
 	public LoginPage Password(String password) {

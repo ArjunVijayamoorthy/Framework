@@ -1,16 +1,18 @@
 package testcases;
 
+
 import org.testng.annotations.Test;
 
+import dependency.URL;
 import webpages.LoginPage;
 
-public class LoginTest {
+public class LoginTest extends URL {
 
 	@Test
 	
 	public void TC01(){
 		
-		new LoginPage()
+		new LoginPage(driver)
 		.Username("John Doe")
 		.Password("ThisIsNotAPassword")
 		.ClickLogin();
